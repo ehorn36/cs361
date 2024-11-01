@@ -1,0 +1,38 @@
+<!-- .ejs file uses HTML + JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='app.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main class="home_about">
+        <h2>Account Info</h2>
+        <h4>Name</h4>
+            <div class="white_box">
+                <div><%= name %></div>
+            </div>
+        <h4>Email</h4>
+        <div class="white_box">
+            <div><%= email %></div>
+        </div>
+        <h4>Favorite movie</h4>
+        <div class="white_box">
+            <div><%= movie %></div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <form action="/home" method="GET">
+                <button class="button" type="submit">Go back home</button>
+            </form>
+
+    </main>
+</body>
+</html>

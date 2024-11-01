@@ -1,0 +1,90 @@
+<!-- .ejs file uses HTML + JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='app.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main class="home_about">
+        <div class="spacer"></div>
+        <h2 >Register</h2>
+        <p >Complete the fields below, then click the Register button to create an account.</p>
+            <form action="/register" method="POST" onsubmit="return validatePassword()">
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" placeholder="Name"  id="name" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" placeholder="Email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="movie">Favorite Movie:</label></td>
+                        <td><input type="text" placeholder="Favorite movie" id="movie" name="movie" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password1">Password:</label></td>
+                        <td><input type="password" placeholder="Password" id="password1" name="password1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password2">Retype Password:</label></td>
+                        <td><input type="password" placeholder="Retype password" id="password2" name="password2" required></td>
+                    </tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="button" type="submit">Register</button>
+                    </td>
+                </table>
+            </form>
+            <nav>
+                <a href="/signin" style="text-decoration: underline;">Already have an account?</a>
+            </nav>
+    </main>
+
+    <!-- JavaScript code here to ensure HTML loads before script.  -->
+    <!-- https://www.geeksforgeeks.org/password-matching-using-javascript/  -->
+    <script>
+
+        // Function to check password values. 
+        function validatePassword() {
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+            
+            // If password1 is blank.
+            if (password1 == '') {
+                alert("Please enter Password");
+                return false;
+
+            // If password2 is blank.
+            } else if (password2 == '') {
+                alert("Please enter confirm password");
+                return false;
+
+            // If either password is < 8 characters
+            } else if (password1.length < 8  || password2.length < 8) {
+                alert("Password must be at least 8 characters.");
+                return false;
+
+            // If passwords don't match, return false (which stops the submission).
+            } else if (password1 != password2) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            } 
+            
+            // If passwords match, return true (which allows the submission).
+            else {
+                return true;
+            }
+        }
+      </script>  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- .ejs file uses HTML + JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='app.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main class="home_about">
+        <h2>Welcome, <%= name %></h2>
+        <h4>Favorite movie</h4>
+            <div class="white_box">
+                <div><%= movie %></div>
+            </div>
+        <div style="display: flex; gap: 10px;">
+            <form action="/account" method="GET">
+                <button class="button" type="submit">Account</button>
+            </form>
+            <form id="logout" action="/logout" method="POST" style="display: inline;">
+                <button class="button" type="button" onclick="confirmLogout()">Log Out</button>
+            </form>
+        </div>
+    <script>
+
+        // Create a function that calls the generic 'confirm box' when the logout button is clicked. 
+        function confirmLogout() {
+            if (confirm("Are you sure you want to log out? \n\nYou will have to take the time to sign in again to view your favorite movie.")) 
+
+            // If user selects okay, then logout. Otherwise, do nothing. 
+            {
+                document.getElementById('logout').submit(); 
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

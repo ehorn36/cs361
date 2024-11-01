@@ -1,0 +1,42 @@
+<!-- .ejs file uses HTML + JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='app.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main class="home_about">
+        <div class="spacer"></div>
+        <h2 >Sign-in</h2>
+            <form action="/signin" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" placeholder="Email address" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" placeholder="Password" id="password" name="password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="button" type="submit">Sign-in</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <nav>
+                <a href="/register" style="text-decoration: underline;">Have created an account yet?</a>
+            </nav>
+    </main>
+</body>
+</html>

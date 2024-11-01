@@ -5,3 +5,7 @@
 # sqlite3 database.sqlite -> SELECT * FROM users;
 
 # To view all tables within the database, enter the command: .tables
+
+# git add -A
+# git commit -m " "
+# git push

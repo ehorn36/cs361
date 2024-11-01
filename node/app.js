@@ -12,6 +12,8 @@ const port = 3000;
 // Enable Express to handle HTML form data.
 app.use(express.urlencoded({ extended: true }));
 
+// Title: How to handle sessions in Express ?
+// Sources: https://www.geeksforgeeks.org/how-to-handle-sessions-in-express/
 // Enable express to handle user sessions.
 app.use(session({
   secret: 'my_session_key', 
@@ -116,6 +118,15 @@ app.get('/signin', (req, res) => {
 
 
 // *** POST ROUTES ***
+// Name: Database integration
+// Source: https://expressjs.com/en/guide/database-integration.html
+
+// Name: How to handle form data in Express ?
+// Source: https://www.geeksforgeeks.org/how-to-handle-form-data-in-express/
+
+// Name: Node and Express.js Fundamentals - Collecting Form Data with Express
+// Source: https://www.youtube.com/watch?v=V9JyBCTcDsg
+
 // Submit registration form.
 app.post("/register", (req, res) => {
   const { name, email, movie, password2 } = req.body; // HTML 'name=' fields.

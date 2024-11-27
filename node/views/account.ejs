@@ -31,10 +31,41 @@
         <div class="white_box">
             <div><%= movie %></div>
         </div>
+        <h4>Release Date</h4>
+        <div class="white_box">
+            <div><%= releaseDate %></div>
+        </div>
+        <h4>IMDB Review Score</h4>
+        <div class="white_box">
+            <div><%= movieReview %></div>
+        </div>
+        <h4>Summary</h4>
+        <div class="white_box">
+            <div><%= overview %></div>
+        </div>
+        <h4>Movie Recommendation</h4>
+        <div class="white_box">
+            <div><%= movieRec %></div>
+        </div>
+        <h4>Movie Recommendation Summary</h4>
+        <div class="white_box">
+            <div><%= RecSum %></div>
+        </div>
+
+        <!-- Name: HTML Images -->
+        <!-- Source: https://www.w3schools.com/html/html_images.asp -->
+        <% if (movieURL) { %>
+            <img src="<%= movieURL %>" alt="Movie Image" class="movie-image">
+        <% } %>
         <div style="display: flex; gap: 10px;">
             <form action="/home" method="GET">
                 <button class="button" type="submit">Go back home</button>
             </form>
+            <form action="/update" method="GET">
+                <button class="button" type="submit">Update favorite movie</button>
+            </form>
+        </div>
+
 
     </main>
 </body>

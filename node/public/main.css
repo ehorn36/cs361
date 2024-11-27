@@ -104,6 +104,20 @@ nav a:focus {text-decoration: none; color: var(--offWhite);}
     color: black;
 }
 
+.movie-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.movie-image-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+}
+
 h2 {
     max-width: 650px;
     text-align: center;

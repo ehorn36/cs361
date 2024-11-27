@@ -23,14 +23,21 @@
             <div class="white_box">
                 <div><%= movie %></div>
             </div>
+        <% if (movieURL) { %>
+            <img src="<%= movieURL %>" alt="Movie Image" class="movie-image">
+        <% } %>       
         <div style="display: flex; gap: 10px;">
             <form action="/account" method="GET">
                 <button class="button" type="submit">Account</button>
+            </form>
+            <form action="/search" method="GET">
+                <button class="button" type="submit">Search for Movie</button>
             </form>
             <form id="logout" action="/logout" method="POST" style="display: inline;">
                 <button class="button" type="button" onclick="confirmLogout()">Log Out</button>
             </form>
         </div>
+    
     <script>
 
         // Name: Window confirm()
@@ -46,6 +53,5 @@
         }
 
     </script>
-    
 </body>
 </html>

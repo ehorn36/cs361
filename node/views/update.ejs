@@ -1,0 +1,47 @@
+<!-- .ejs file uses HTML + JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='app.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main class="home_about">
+        <div class="spacer"></div>
+        <h2 >Update your favorite movie</h2>
+
+        <!-- Name: How to handle form data in Express ? -->
+        <!--Source: https://www.geeksforgeeks.org/how-to-handle-form-data-in-express/ -->
+
+        <!-- Name: Node and Express.js Fundamentals - Collecting Form Data with Express -->
+        <!--Source: https://www.youtube.com/watch?v=V9JyBCTcDsg -->
+
+            <form action="/update" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="movie_update">Update:</label></td>
+                        <td><input type="text" placeholder="Enter the name of a movie" id="movie" name="movie" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="button" type="submit">Update Movie</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div style="display: flex; gap: 10px;">
+                <form action="/home" method="GET">
+                    <button class="button" type="submit">Go back home</button>
+                </form>
+            </div>
+    </main>
+</body>
+</html>
